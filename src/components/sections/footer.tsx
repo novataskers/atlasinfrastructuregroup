@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const LOGO_URL = "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/cd2f08d3-1d27-4c0f-8dcd-3a8affeb6b4f/WhatsApp_Image_2026-02-20_at_4.12.53_PM-removebg-preview-1771621011092.png?width=8000&height=8000&resize=contain";
 
@@ -50,21 +51,14 @@ const Footer = () => {
   ];
 
   const mainLinks = [
-    { title: 'Who We Are', url: '#who-we-are' },
-    { title: 'What We Do', url: '#what-we-do' },
-    { title: 'Careers', url: '#careers' },
-  ];
-
-  const secondaryLinks = [
-    { title: 'Investors', url: '#investors' },
-    { title: 'News', url: '#news' },
-    { title: 'Partners', url: '#partners' },
+    { title: 'Our Story', url: '/our-story' },
+    { title: 'Careers', url: '/careers' },
+    { title: 'News', url: '/news' },
   ];
 
   const subLinks = [
     { title: 'Privacy Notice', url: '#privacy' },
     { title: 'Terms of Use', url: '#terms' },
-    { title: 'Corporate Governance', url: '#governance' },
     { title: 'Contact Us', url: '#contact' },
   ];
 
@@ -73,7 +67,7 @@ const Footer = () => {
       <div className="mx-auto max-w-[1600px] px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-[#262626] pb-8 gap-8 md:gap-0">
           <div className="flex-shrink-0">
-            <a href="/" className="inline-block">
+            <Link href="/" className="inline-block">
               <Image
                 src={LOGO_URL}
                 alt="Atlas Infrastructure Group Logo"
@@ -81,7 +75,7 @@ const Footer = () => {
                 height={55}
                 className="h-[120px] w-auto object-contain brightness-0 invert"
               />
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center gap-6">
@@ -128,25 +122,12 @@ const Footer = () => {
           <ul className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-8">
             {mainLinks.map((link) => (
               <li key={link.title}>
-                <a
+                <Link
                   href={link.url}
                   className="footer-link text-[13px] tracking-[0.1em] font-normal uppercase hover:underline"
                 >
                   {link.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <ul className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-4">
-            {secondaryLinks.map((link) => (
-              <li key={link.title}>
-                <a
-                  href={link.url}
-                  className="footer-link text-[13px] tracking-[0.1em] font-normal uppercase hover:underline text-white"
-                >
-                  {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

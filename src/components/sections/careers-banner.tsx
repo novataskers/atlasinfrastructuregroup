@@ -4,9 +4,20 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 
 const CareersBanner = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
+  const [activeTab] = useState(0);
+  const [isOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const infographicItems = [
+    { label: 'Fastest image generation', pos: 'top-0 left-1/2 -translate-x-1/2' },
+    { label: 'Image + video + music generation', pos: 'top-[22%] right-0 translate-x-2' },
+    { label: 'Fastest response', pos: 'top-[55%] right-0 translate-x-2' },
+    { label: 'Deep research (internet + databases)', pos: 'bottom-[18%] right-0 translate-x-2' },
+    { label: 'Reasoning + deep data extraction', pos: 'bottom-0 left-1/2 -translate-x-1/2' },
+    { label: 'Creativity', pos: 'bottom-[18%] left-0 -translate-x-2' },
+    { label: 'Automation creation + deployments', pos: 'top-[55%] left-0 -translate-x-2' },
+    { label: 'Analysis + prediction', pos: 'top-[22%] left-0 -translate-x-2' },
+  ];
 
   const tabs = [
     {
@@ -47,73 +58,81 @@ const CareersBanner = () => {
     }
   ];
 
-  const handleTabClick = (index: number) => {
-    setActiveTab(index);
-    setIsOpen(true);
-    setTimeout(() => {
-      contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-  };
-
   return (
     <section className="relative w-full overflow-hidden bg-black">
       <div className="relative h-screen w-full">
         <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover grayscale opacity-60"
-          >
-            <source src="https://cdn.northropgrumman.com/-/media/brand-team/new-homepage/careers-banner.mp4?rev=a19d14fe24b54eac98796190b11d6d51" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.18)_0%,rgba(0,0,0,0)_55%),radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0)_60%)]" />
+          <div className="absolute inset-0 opacity-[0.25] bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:64px_64px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 pointer-events-none" />
         </div>
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-          <a href="#careers" className="group">
-            <h1 className="mb-2 text-white text-shadow-heavy fade-in-up text-[clamp(32px,5vw,64px)]">
-              ADVANCING INFRASTRUCTURE
-            </h1>
-            <h1 className="text-white text-shadow-heavy fade-in-up text-[clamp(32px,5vw,64px)]" style={{ animationDelay: '0.2s' }}>
-              AND YOUR CAREER.
-            </h1>
-
-            <div className="mt-12 flex justify-center fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <button className="glass-panel flex items-center justify-between gap-4 px-6 py-2 border border-white/20 hover:bg-white hover:text-black transition-all duration-300">
-                <span className="label-caps !text-[12px] text-white group-hover:text-black">CAREERS</span>
-                <svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-white group-hover:stroke-black">
-                  <path d="M1 1L13 11.5L1 22" strokeWidth="2" />
-                </svg>
-              </button>
+          <div className="w-full max-w-[1100px] pb-24">
+            <div className="mb-10">
+              <p className="label-caps !text-[11px] text-white/60 tracking-[0.25em] fade-in-up">
+                Atlas AI Capability Infographic
+              </p>
             </div>
-          </a>
+
+            <div className="relative mx-auto w-full max-w-[900px] aspect-square">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-[10%] rounded-full border border-white/10 animate-spin [animation-duration:18s]" />
+                <div className="absolute inset-[22%] rounded-full border border-white/10 animate-spin [animation-duration:28s] [animation-direction:reverse]" />
+                <div className="absolute inset-[34%] rounded-full border border-white/10" />
+
+                <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] rounded-full border border-[rgba(0,194,255,0.35)] bg-black/40 backdrop-blur-md flex flex-col items-center justify-center px-6">
+                  <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,194,255,0.22)_0%,transparent_70%)] animate-pulse" />
+                  <div className="relative">
+                    <div className="text-white text-[11px] tracking-[0.35em] uppercase font-semibold">
+                      AIG Engine 3
+                    </div>
+                    <div className="mt-4 text-white/80 text-[12px] leading-relaxed font-light">
+                      Multimodal generation
+                      <br />Research + reasoning
+                      <br />Automation + prediction
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {infographicItems.map((item) => (
+                <div
+                  key={item.label}
+                  className={`hidden md:flex absolute ${item.pos} items-center gap-3`}
+                >
+                  <div className="relative">
+                    <span className="absolute -inset-2 rounded-full bg-[rgba(0,194,255,0.15)] blur-md animate-pulse" />
+                    <span className="relative block w-2.5 h-2.5 rounded-full bg-[#00c2ff]" />
+                  </div>
+                  <div className="glass-panel border border-white/10 px-4 py-3 text-left max-w-[260px]">
+                    <p className="text-white text-[11px] tracking-[0.12em] uppercase font-semibold">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 md:hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {infographicItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="glass-panel border border-white/10 px-4 py-4 text-left"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="block w-2 h-2 rounded-full bg-[#00c2ff]" />
+                    <p className="text-white text-[11px] tracking-[0.12em] uppercase font-semibold">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-20 w-full bg-gradient-to-t from-black via-black/80 to-transparent pt-20">
-          <div className="mx-auto max-w-[1600px] px-8 flex flex-wrap items-center justify-center gap-1 sm:gap-4 pb-8">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => handleTabClick(index)}
-                className={`nav-link px-4 py-2 transition-colors duration-200 hover:text-white ${
-                  activeTab === index && isOpen ? 'text-white border-b-2 border-white' : 'text-white/60'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="absolute bottom-4 right-8 hidden items-center space-x-3 lg:flex">
-            <div className="flex flex-col items-center">
-              <span className="block w-[1px] h-6 bg-white/40 animate-pulse" />
-              <span className="block w-[1px] h-2 bg-white/20" />
-            </div>
-            <p className="label-caps !text-[10px] text-white/60 tracking-widest whitespace-nowrap">SCROLL FOR MORE</p>
-          </div>
-        </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 z-20 w-full h-24 bg-gradient-to-t from-black via-black/60 to-transparent" />
       </div>
 
       <div
@@ -159,24 +178,6 @@ const CareersBanner = () => {
               </div>
             </div>
           ))}
-
-          <div className="absolute top-0 left-0 w-full z-20 border-b border-white/10 bg-black/40 backdrop-blur-md">
-            <div className="mx-auto max-w-[1600px] px-8 py-4">
-              <div className="flex flex-wrap justify-center gap-6">
-                {tabs.map((tab, index) => (
-                  <button
-                    key={`secondary-${index}`}
-                    onClick={() => setActiveTab(index)}
-                    className={`nav-link text-[11px] px-2 py-1 transition-all duration-300 hover:text-white ${
-                      activeTab === index ? 'text-white border-b border-white' : 'text-white/40'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

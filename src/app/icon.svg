@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="g" x1="48" y1="232" x2="208" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#061c3d"/>
+      <stop offset="1" stop-color="#0a3a73"/>
+    </linearGradient>
+  </defs>
+  <!-- The AIG "A" shape, clean vector without background or overlaps -->
+  <path
+    d="M128 26L34 230h44l50-120 50 120h44L128 26z"
+    fill="url(#g)"
+  />
+</svg>

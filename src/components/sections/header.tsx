@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -33,7 +34,7 @@ export default function Header() {
           aria-label="Atlas Infrastructure Group Site Navigation"
         >
           <div className="flex-shrink-0">
-            <a href="/" className="block outline-none focus-visible:ring-2 focus-visible:ring-white/50">
+            <Link href="/" className="block outline-none focus-visible:ring-2 focus-visible:ring-white/50">
               <Image
                 src={LOGO_URL}
                 alt="Atlas Infrastructure Group Logo"
@@ -42,7 +43,7 @@ export default function Header() {
                 className="h-[100px] w-auto object-contain brightness-0 invert"
                 priority
               />
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center justify-end flex-grow">

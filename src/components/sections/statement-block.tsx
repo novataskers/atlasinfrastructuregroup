@@ -5,17 +5,13 @@ import Image from 'next/image';
 
 const logos = [
   {
-    src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/6a2ec8fd-d8af-4e7e-8f45-0c861bf86638/WhatsApp-Image-2026-02-12-at-12.45.19-AM-1771669352333.jpeg",
+    src: "/hiremindx-logo.png",
     alt: "HireMindX",
     href: "https://hiremindx.com",
   },
   {
-    src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/6a2ec8fd-d8af-4e7e-8f45-0c861bf86638/ChatGPT-Image-Feb-21-2026-04_29_34-PM-1771669915569.png",
-    alt: "Calculator App",
-  },
-  {
-    src: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/6a2ec8fd-d8af-4e7e-8f45-0c861bf86638/ChatGPT-Image-Feb-21-2026-04_31_44-PM-1771669915655.png",
-    alt: "AI Spark App",
+    src: "/ixra-ai-logo.png",
+    alt: "IXRA AI",
   },
 ];
 

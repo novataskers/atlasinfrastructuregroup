@@ -43,14 +43,14 @@ export default function MissionBanner() {
           <div className="atlas-divider mx-auto mt-3 mb-8" />
 
           <blockquote className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-white max-w-5xl mx-auto">
-            "To build the{" "}
+            &quot;To build the{" "}
             <span className="font-bold atlas-text-gradient-2">
               AI infrastructure
             </span>{" "}
-            that powers humanity's most critical missions — from the{" "}
+            that powers humanity&apos;s most critical missions — from the{" "}
             <span className="font-bold">battlefield</span> to the{" "}
             <span className="font-bold">operating room</span> to the{" "}
-            <span className="font-bold">edge of space</span>."
+            <span className="font-bold">edge of space</span>.&quot;
           </blockquote>
 
           <div className="mt-10 flex items-center justify-center gap-4">

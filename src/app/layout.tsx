@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     "Atlas Infrastructure Group delivers frontier-grade AI infrastructure, advanced AI software, and mission-critical solutions for defense, health, and national security.",
   keywords:
     "AI infrastructure, defense AI, frontier AI, military technology, AI solutions, national security",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

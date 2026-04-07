@@ -109,30 +109,52 @@ export default function Insights() {
 
               {/* Content */}
               <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[9px] font-semibold tracking-[0.15em] uppercase text-[#00c2ff]">
-                    {item.category}
-                  </span>
-                  <span className="text-[#1a3a6b]">·</span>
-                  <span className="text-[9px] tracking-wide text-[#3a5570]">
-                    {item.date}
-                  </span>
-                </div>
+                <div className="flex flex-col">
+                  <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: i * 0.1 + 0.05, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex items-center gap-3 mb-3"
+                  >
+                    <span className="text-[9px] font-semibold tracking-[0.15em] uppercase text-[#00c2ff]">
+                      {item.category}
+                    </span>
+                    <span className="text-[#1a3a6b]">·</span>
+                    <span className="text-[9px] tracking-wide text-[#3a5570]">
+                      {item.date}
+                    </span>
+                  </motion.div>
 
-                <h3 className="text-[13px] font-semibold text-white leading-snug mb-3 group-hover:text-[#e0eaf5] transition-colors">
-                  {item.title}
-                </h3>
+                  <motion.h3
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: i * 0.1 + 0.12, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-[13px] font-semibold text-white leading-snug mb-3 group-hover:text-[#e0eaf5] transition-colors"
+                  >
+                    {item.title}
+                  </motion.h3>
 
-                <p className="text-[11px] text-[#3a5570] leading-relaxed mb-5 line-clamp-3">
-                  {item.excerpt}
-                </p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: i * 0.1 + 0.18, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-[11px] text-[#3a5570] leading-relaxed mb-5 line-clamp-3"
+                  >
+                    {item.excerpt}
+                  </motion.p>
 
-                <div className="flex items-center gap-2 text-[9px] font-semibold tracking-[0.15em] uppercase text-[#1a3a6b] group-hover:text-[#00c2ff] transition-colors">
-                  Read More
-                  <ArrowRight
-                    size={10}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
+                  <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: i * 0.1 + 0.24, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex items-center gap-2 text-[9px] font-semibold tracking-[0.15em] uppercase text-[#1a3a6b] group-hover:text-[#00c2ff] transition-colors"
+                  >
+                    Read More
+                    <ArrowRight
+                      size={10}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                  </motion.div>
                 </div>
               </div>
             </motion.article>
