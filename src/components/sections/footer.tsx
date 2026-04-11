@@ -57,9 +57,9 @@ const Footer = () => {
   ];
 
   const subLinks = [
-    { title: 'Privacy Notice', url: '#privacy' },
-    { title: 'Terms of Use', url: '#terms' },
-    { title: 'Contact Us', url: '#contact' },
+    { title: 'Privacy Notice', url: '/privacy' },
+    { title: 'Terms of Use', url: '/terms' },
+    { title: 'Contact Us', url: '/careers#contact' },
   ];
 
   return (
@@ -137,12 +137,12 @@ const Footer = () => {
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             {subLinks.map((link) => (
               <li key={link.title}>
-                <a
+                <Link
                   href={link.url}
                   className="text-[12px] uppercase tracking-[0.05em] text-[#a3a3a3] hover:text-white transition-colors"
                 >
                   {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

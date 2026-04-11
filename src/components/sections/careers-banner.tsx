@@ -62,7 +62,7 @@ const CareersBanner = () => {
     <section className="relative w-full overflow-hidden bg-black">
       <div className="relative h-screen w-full">
         <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,194,255,0.18)_0%,rgba(0,0,0,0)_55%),radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0)_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.18)_0%,rgba(0,0,0,0)_55%),radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,rgba(0,0,0,0)_60%)]" />
           <div className="absolute inset-0 opacity-[0.25] bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:64px_64px]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 pointer-events-none" />
         </div>
@@ -81,8 +81,8 @@ const CareersBanner = () => {
                 <div className="absolute inset-[22%] rounded-full border border-white/10 animate-spin [animation-duration:28s] [animation-direction:reverse]" />
                 <div className="absolute inset-[34%] rounded-full border border-white/10" />
 
-                <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] rounded-full border border-[rgba(0,194,255,0.35)] bg-black/40 backdrop-blur-md flex flex-col items-center justify-center px-6">
-                  <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,194,255,0.22)_0%,transparent_70%)] animate-pulse" />
+                <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] rounded-full border border-[rgba(212,175,55,0.35)] bg-black/40 backdrop-blur-md flex flex-col items-center justify-center px-6">
+                  <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.22)_0%,transparent_70%)] animate-pulse" />
                   <div className="relative">
                     <div className="text-white text-[11px] tracking-[0.35em] uppercase font-semibold">
                       AIG Engine 3
@@ -102,8 +102,8 @@ const CareersBanner = () => {
                   className={`hidden md:flex absolute ${item.pos} items-center gap-3`}
                 >
                   <div className="relative">
-                    <span className="absolute -inset-2 rounded-full bg-[rgba(0,194,255,0.15)] blur-md animate-pulse" />
-                    <span className="relative block w-2.5 h-2.5 rounded-full bg-[#00c2ff]" />
+                    <span className="absolute -inset-2 rounded-full bg-[rgba(212,175,55,0.15)] blur-md animate-pulse" />
+                    <span className="relative block w-2.5 h-2.5 rounded-full bg-[#d4af37]" />
                   </div>
                   <div className="glass-panel border border-white/10 px-4 py-3 text-left max-w-[260px]">
                     <p className="text-white text-[11px] tracking-[0.12em] uppercase font-semibold">
@@ -121,7 +121,7 @@ const CareersBanner = () => {
                   className="glass-panel border border-white/10 px-4 py-4 text-left"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="block w-2 h-2 rounded-full bg-[#00c2ff]" />
+                    <span className="block w-2 h-2 rounded-full bg-[#d4af37]" />
                     <p className="text-white text-[11px] tracking-[0.12em] uppercase font-semibold">
                       {item.label}
                     </p>
